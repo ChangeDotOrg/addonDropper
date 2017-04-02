@@ -2,23 +2,35 @@
 <html >
   <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Happy Hour</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
 
   </head>
-  <body>
-
-    <h1>Sup Happy Hour</h1>
-
+  <body ng-app="app">
+    <navbar></navbar>
+    <ui-view></ui-view>
   </body>
 
+  <script src="app.js"></script>
 
-<script>
+  <script src="src/about/index.js"></script>
+  <script src="src/about/controller.js"></script>
+  <script src="src/about/component.js"></script>
 
-  require('./src/test.js')
+  <script src="src/navbar/index.js"></script>
+  <script src="src/navbar/controller.js"></script>
+  <script src="src/navbar/component.js"></script>
 
-</script>
+  <script src="src/dropfile/index.js"></script>
+  <script src="src/dropfile/controller.js"></script>
+  <script src="src/dropfile/component.js"></script>
+
+  <script src="src/home/index.js"></script>
+  <script src="src/home/controller.js"></script>
+  <script src="src/home/component.js"></script>
 
 </html>
