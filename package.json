@@ -23,11 +23,13 @@
   },
   "dependencies": {
     "angular": "^1.6.3",
+    "angular-gantt": "^2.0.0-rc.1",
     "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
     "electron": "^1.6.2",
     "electron-debug": "^1.1.0",
-    "electron-localshortcut": "^1.0.0"
+    "electron-localshortcut": "^1.0.0",
+    "moment": "^2.20.1"
   },
   "license": "ISC",
   "bugs": {
