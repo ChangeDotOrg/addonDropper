@@ -1,7 +1,33 @@
-<container>
-    <div gantt data="$ctrl.data">
-        <gantt-table></gantt-table>
-        <gantt-movable></gantt-movable>
-        <gantt-tooltips></gantt-tooltips>
-    </div>
-</container>
+<div gantt data="$ctrl.options.data" show-side="$ctrl.options.labelsEnabled" daily="$ctrl.options.daily" filter-task="{'name': $ctrl.options.filterTask}"
+    filter-row="{'name': $ctrl.options.filterRow}" sort-mode="$ctrl.options.sortMode" view-scale="$ctrl.options.scale" column-width="getColumnWidth($ctrl.options.width, $ctrl.options.scale, $ctrl.options.zoom)"
+    auto-expand="$ctrl.options.autoExpand" task-out-of-range="$ctrl.options.taskOutOfRange" from-date="$ctrl.options.fromDate"
+    to-date="$ctrl.options.toDate" allow-side-resizing="$ctrl.options.allowSideResizing" task-content="$ctrl.options.taskContentEnabled ? $ctrl.options.taskContent : undefined"
+    row-content="$ctrl.options.rowContentEnabled ? $ctrl.options.rowContent : undefined" current-date="$ctrl.options.currentDate"
+    current-date-value="$ctrl.options.currentDateValue" headers="$ctrl.options.width && $ctrl.options.shortHeaders || $ctrl.options.longHeaders"
+    max-height="$ctrl.options.maxHeight && 300 || 0" time-frames="$ctrl.options.timeFrames" date-frames="$ctrl.options.dateFrames"
+    time-frames-working-mode="$ctrl.options.timeFramesWorkingMode" time-frames-non-working-mode="$ctrl.options.timeFramesNonWorkingMode"
+    time-frames-magnet="$ctrl.options.timeFramesMagnet" api="$ctrl.options.api" column-magnet="$ctrl.options.columnMagnet">
+    <gantt-tree enabled="$ctrl.options.sideMode === 'Tree' || $ctrl.options.sideMode === 'TreeTable'" header-content="$ctrl.options.treeHeaderContent"
+        keep-ancestor-on-filter-row="true">
+    </gantt-tree>
+    <gantt-table enabled="$ctrl.options.sideMode === 'Table' || $ctrl.options.sideMode === 'TreeTable'" columns="$ctrl.options.sideMode === 'TreeTable' ? $ctrl.options.treeTableColumns : $ctrl.options.columns"
+        headers="$ctrl.options.columnsHeaders" classes="$ctrl.options.columnsClasses" formatters="$ctrl.options.columnsFormatters"
+        contents="$ctrl.options.columnsContents" header-contents="$ctrl.options.columnsHeaderContents">
+    </gantt-table>
+    <gantt-corner headers-labels="$ctrl.options.corner.headersLabels" headers-labels-templates="$ctrl.options.corner.headersLabelsTemplates"></gantt-corner>
+    <gantt-groups enabled="$ctrl.options.groupDisplayMode === 'group' || $ctrl.options.groupDisplayMode === 'overview' || $ctrl.options.groupDisplayMode === 'promote'"
+        display="$ctrl.options.groupDisplayMode"></gantt-groups>
+    <gantt-tooltips></gantt-tooltips>
+    <gantt-bounds></gantt-bounds>
+    <gantt-progress></gantt-progress>
+    <gantt-sortable></gantt-sortable>
+    <gantt-sections></gantt-sections>
+    <gantt-movable enabled="!$ctrl.options.readOnly" allow-row-switching="$ctrl.options.movable.allowRowSwitching"></gantt-movable>
+    <gantt-draw-task enabled="$ctrl.options.canDraw" move-threshold="2" task-factory="$ctrl.options.drawTaskFactory">
+    </gantt-draw-task>
+    <gantt-overlap></gantt-overlap>
+    <gantt-resize-sensor></gantt-resize-sensor>
+    <gantt-dependencies enabled="$ctrl.options.dependencies.enabled" conflict-checker="$ctrl.options.dependencies.conflictChecker"
+        read-only="$ctrl.options.readOnly">
+    </gantt-dependencies>
+</div>

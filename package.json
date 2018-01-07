@@ -29,6 +29,7 @@
     "electron": "^1.6.2",
     "electron-debug": "^1.1.0",
     "electron-localshortcut": "^1.0.0",
+    "jsplumb": "^2.5.12",
     "moment": "^2.20.1"
   },
   "license": "ISC",
