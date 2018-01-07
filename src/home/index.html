@@ -1,3 +1,4 @@
+<input class="btn btn-default" ng-model="$ctrl.options.filterRow"></input>
 <div gantt data="$ctrl.options.data" show-side="$ctrl.options.labelsEnabled" daily="$ctrl.options.daily" filter-task="{'name': $ctrl.options.filterTask}"
     filter-row="{'name': $ctrl.options.filterRow}" sort-mode="$ctrl.options.sortMode" view-scale="$ctrl.options.scale" column-width="getColumnWidth($ctrl.options.width, $ctrl.options.scale, $ctrl.options.zoom)"
     auto-expand="$ctrl.options.autoExpand" task-out-of-range="$ctrl.options.taskOutOfRange" from-date="$ctrl.options.fromDate"

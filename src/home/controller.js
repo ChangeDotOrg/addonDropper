@@ -1,4 +1,5 @@
 function HomeController($scope) {
+    const moment = require('moment')
     this.name = "Happy Hour"
     this.options = {
         mode: 'custom',
@@ -114,11 +115,11 @@ function HomeController($scope) {
                 color: '#AA8833' // Color of the task in HEX format (Optional).
             }
         },
-        api: function (api) {
+        api: (api) => {
             // API Object is used to control methods and events from angular-gantt.
-            $scope.api = api
+            this.api = api
 
-            api.core.on.ready($scope, function () {
+            api.core.on.ready($scope, () => {
                 // Log various events to console
                 api.scroll.on.scroll($scope, () => { console.log('scrolling ^_^') })
                 api.core.on.ready($scope, () => { console.log('logReady') })
@@ -160,6 +161,14 @@ function HomeController($scope) {
 
                 api.timespans.on.add($scope, () => { })
                 api.columns.on.generate($scope, () => { })
+
+                // api.rows.addRowFilter((rows) => {
+                //     console.log(rows)
+                //     return rows.filter((row) => {
+                //         if (row.model.name === 'Hampton') return true
+                //         else return false
+                //     })
+                // })
 
                 api.rows.on.filter($scope, () => { })
                 api.tasks.on.filter($scope, () => { })
@@ -247,6 +256,11 @@ function HomeController($scope) {
                 { name: 'Shop is running', color: '#93C47D', from: new Date(2013, 10, 22, 12, 0, 0), to: new Date(2013, 10, 22, 12, 0, 0) },
                 { name: 'Go-live', color: '#93C47D', from: new Date(2013, 10, 29, 16, 0, 0), to: new Date(2013, 10, 29, 16, 0, 0) }
             ], data: 'Can contain any custom data or object'
+        },
+        {
+            name: 'Hampton', tasks: [
+                { name: 'Ham', color: '#a1a1a1', from: new Date(2013, 9, 20, 15, 0, 0), to: new Date(2013, 9, 25, 18, 30, 0) },
+            ]
         },
         {
             name: 'Status meetings', tasks: [
