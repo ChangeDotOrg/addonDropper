@@ -1,1 +1,3 @@
-# addonDropper
+# Angular test application
+
+### Angular Gantt
