@@ -3,6 +3,6 @@
 
     // .controller('aboutController',AboutController)
 angular
-    .module('about', ['ui.router'])
+    .module('window', [])
     // .component('about', AboutComponent)
     // .name

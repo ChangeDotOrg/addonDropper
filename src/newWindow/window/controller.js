@@ -1,13 +1,13 @@
 // function AboutController() {
 //     this.name = "Happy Hour"
 // }
- class AboutController{
+
+ class WindowController{
      constructor(){
-         this.name = "class now"
      }
  }
 
 //  export default AboutController
 angular
-    .module('about')
-    .controller('aboutController', AboutController)
+    .module('window')
+    .controller('windowController', WindowController)

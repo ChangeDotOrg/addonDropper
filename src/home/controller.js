@@ -1,4 +1,6 @@
-function HomeController($scope) {
+class HomeController {
+    constructor($scope) {
+        
     const moment = require('moment')
     this.name = "Happy Hour"
     this.options = {
@@ -359,7 +361,7 @@ function HomeController($scope) {
                 { name: 'Technical/User documentation', color: '#F1C232', from: new Date(2013, 10, 26, 8, 0, 0), to: new Date(2013, 10, 28, 18, 0, 0) }
             ]
         }]
-    }
+    }}
 }
 
 angular

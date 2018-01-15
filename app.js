@@ -2,6 +2,7 @@
  * Initial Angular App Settup
  * Routing for each view created
  */
+
 angular
   .module('app', ['ui.router','about', 'navbar', 'dropfile', 'home'])
   .config(( $stateProvider , $urlRouterProvider ) => {

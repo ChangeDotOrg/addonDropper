@@ -1,5 +1,11 @@
-function DropfileController() {
-    this.name = "Drop File here"
+const {ipcRenderer} = require('electron')
+ class DropfileController {
+     constructor(){
+        
+     }
+    openNewWindow() {
+        ipcRenderer.send('main-to-window', 'ping')
+    }
 }
 
 angular

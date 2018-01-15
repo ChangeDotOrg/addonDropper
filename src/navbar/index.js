@@ -1,2 +1,2 @@
 angular
-    .module('navbar', ['ui.router'])
+    .module('navbar', [])

@@ -30,7 +30,9 @@
     "electron-debug": "^1.1.0",
     "electron-localshortcut": "^1.0.0",
     "jsplumb": "^2.5.12",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "mongodb": "^3.0.1",
+    "mongoose": "^4.13.9"
   },
   "license": "ISC",
   "bugs": {
