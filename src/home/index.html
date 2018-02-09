@@ -1,5 +1,6 @@
 <input class="btn btn-default" ng-model="$ctrl.options.filterRow"></input>
-<div gantt data="$ctrl.options.data" show-side="$ctrl.options.labelsEnabled" daily="$ctrl.options.daily" filter-task="{'name': $ctrl.options.filterTask}"
+<!-- daily="$ctrl.options.daily" -->
+<div gantt data="$ctrl.options.data" show-side="$ctrl.options.labelsEnabled" filter-task="{'name': $ctrl.options.filterTask}"
     filter-row="{'name': $ctrl.options.filterRow}" sort-mode="$ctrl.options.sortMode" view-scale="$ctrl.options.scale" column-width="getColumnWidth($ctrl.options.width, $ctrl.options.scale, $ctrl.options.zoom)"
     auto-expand="$ctrl.options.autoExpand" task-out-of-range="$ctrl.options.taskOutOfRange" from-date="$ctrl.options.fromDate"
     to-date="$ctrl.options.toDate" allow-side-resizing="$ctrl.options.allowSideResizing" task-content="$ctrl.options.taskContentEnabled ? $ctrl.options.taskContent : undefined"
@@ -7,7 +8,8 @@
     current-date-value="$ctrl.options.currentDateValue" headers="$ctrl.options.width && $ctrl.options.shortHeaders || $ctrl.options.longHeaders"
     max-height="$ctrl.options.maxHeight && 300 || 0" time-frames="$ctrl.options.timeFrames" date-frames="$ctrl.options.dateFrames"
     time-frames-working-mode="$ctrl.options.timeFramesWorkingMode" time-frames-non-working-mode="$ctrl.options.timeFramesNonWorkingMode"
-    time-frames-magnet="$ctrl.options.timeFramesMagnet" api="$ctrl.options.api" column-magnet="$ctrl.options.columnMagnet">
+    api="$ctrl.options.api">
+    <!-- time-frames-magnet="$ctrl.options.timeFramesMagnet" column-magnet="$ctrl.options.columnMagnet" -->
     <gantt-tree enabled="$ctrl.options.sideMode === 'Tree' || $ctrl.options.sideMode === 'TreeTable'" header-content="$ctrl.options.treeHeaderContent"
         keep-ancestor-on-filter-row="true">
     </gantt-tree>
@@ -22,7 +24,7 @@
     <gantt-bounds></gantt-bounds>
     <gantt-progress></gantt-progress>
     <gantt-sortable></gantt-sortable>
-    <gantt-sections></gantt-sections>
+    <gantt-sections disable-magnet="true" disable-daily="true"></gantt-sections>
     <gantt-movable enabled="!$ctrl.options.readOnly" allow-row-switching="$ctrl.options.movable.allowRowSwitching"></gantt-movable>
     <gantt-draw-task enabled="$ctrl.options.canDraw" move-threshold="2" task-factory="$ctrl.options.drawTaskFactory">
     </gantt-draw-task>
